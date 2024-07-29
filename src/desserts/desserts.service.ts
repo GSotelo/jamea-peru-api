@@ -6,7 +6,7 @@ export class DessertsService {
     return {
       desserts: [
         'Chocotejas',
-        'Budin de Pan',
+        'Budín de Pan',
         'Alfajores',
         'Turro de Doña Pepa',
         'Picarones',
