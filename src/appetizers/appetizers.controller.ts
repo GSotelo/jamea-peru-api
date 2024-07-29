@@ -1,4 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
+import { AppetizersService } from './appetizers.service';
 
 type Appetizers = {
   appetizers: string[];
@@ -6,8 +7,10 @@ type Appetizers = {
 
 @Controller('appetizers')
 export class AppetizersController {
+  constructor(private appetizersService: AppetizersService) {}
+
   @Get()
   getAppetizers(): Appetizers {
-    return { appetizers: ['Ensalada de Palta', 'Empanadas Peruanas'] };
+    return this.appetizersService.findAll();
   }
 }
