@@ -7,7 +7,7 @@ type Appetizers = {
 
 @Controller('appetizers')
 export class AppetizersController {
-  constructor(private appetizersService: AppetizersService) {}
+  constructor(private readonly appetizersService: AppetizersService) {}
 
   @Get()
   getAppetizers(): Appetizers {

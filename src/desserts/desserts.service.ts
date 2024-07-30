@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
 
+type FindDesserts = { desserts: string[] };
+
 @Injectable()
 export class DessertsService {
-  findAll(): { desserts: string[] } {
+  findAll(): FindDesserts {
     return {
       desserts: [
         'Chocotejas',
