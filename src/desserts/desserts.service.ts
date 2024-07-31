@@ -10,7 +10,7 @@ export class DessertsService {
         'Chocotejas',
         'Budín de Pan',
         'Alfajores',
-        'Turro de Doña Pepa',
+        'Turrón de Doña Pepa',
         'Picarones',
         'Arroz Zambito',
         'Mazamorra Morada',
