@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import fata from '@src/app/recipes/sopa-wantan/recipe.json';
 
 export type SoupId =
   | 'sopa-wantan'
@@ -21,7 +22,7 @@ export type SoupRecipe = {
   ingredients: string[];
 } & SoupOverview;
 
-export type FindSoup = (id: string) => SoupRecipe;
+export type FindSoup = (id: string) => Promise<SoupRecipe>;
 
 export type FindSoups = () => { soups: SoupOverview[] };
 
@@ -37,11 +38,14 @@ export class SoupsService {
     return { soups };
   };
 
-  findById: FindSoup = (id: SoupId) => {
-    return {
-      id,
-      name: 'Sopa Wantan',
-      ingredients: ['pollo', 'verduras', 'fideos', 'huevo'],
-    };
+  findById: FindSoup = async (id: SoupId) => {
+    const bazz = await import(`../recipes/sopa-wantan/recipe.json`);
+    console.log(bazz);
+    console.log(fata);
+
+    const recipe = await import(`./recipes/${id}`);
+    console.log('recipe');
+    console.log(recipe);
+    return recipe;
   };
 }

@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AppetizersModule } from './appetizers/appetizers.module';
-import { DessertsModule } from './desserts/desserts.module';
-import { DrinksModule } from './drinks/drinks.module';
-import { MainCoursesModule } from './main-courses/main-courses.module';
-import { SideDishesModule } from './side-dishes/side-dishes.module';
-import { SoupsModule } from './soups/soups.module';
+import { AppetizersModule } from '@src/app/appetizers/appetizers.module';
+import { DessertsModule } from '@src/app/desserts/desserts.module';
+import { DrinksModule } from '@src/app/drinks/drinks.module';
+import { MainCoursesModule } from '@src/app/main-courses/main-courses.module';
+import { SideDishesModule } from '@src/app/side-dishes/side-dishes.module';
+import { SoupsModule } from '@src/app/soups/soups.module';
 
 @Module({
   imports: [
