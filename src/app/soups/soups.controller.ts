@@ -1,5 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { SoupsService } from './soups.service';
+import type { SoupId } from '@soups/soups.types';
 
 @Controller('soups')
 export class SoupsController {
@@ -11,7 +12,7 @@ export class SoupsController {
   }
 
   @Get(':id')
-  getSoupById(@Param('id') id: string) {
+  getSoupById(@Param('id') id: SoupId) {
     return this.soupsService.findById(id);
   }
 }

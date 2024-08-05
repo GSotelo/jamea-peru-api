@@ -18,11 +18,15 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@src/*": ["src/*"],
-      "@soups/*": ["src/soups/*"],
-      "@recipes/*": ["src/recipes/*"]
-    },
-    "resolveJsonModule": true,
-    "esModuleInterop": true
+      "@app/*": ["src/app/*"],
+      "@appetizers/*": ["src/app/appetizers/*"],
+      "@desserts/*": ["src/app/desserts/*"],
+      "@drinks/*": ["src/app/drinks/*"],
+      "@lib/*": ["src/lib/*"],
+      "@mainCourses/*": ["src/app/main-courses/*"],
+      "@sideDishes/*": ["src/app/side-dishes/*"],
+      "@soups/*": ["src/app/soups/*"],
+      "@src/*": ["src/*"]
+    }
   }
 }

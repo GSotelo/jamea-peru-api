@@ -1,51 +1,18 @@
 import { Injectable } from '@nestjs/common';
-import fata from '@src/app/recipes/sopa-wantan/recipe.json';
+import { menu } from '@soups/recipes/menu';
+import type { SoupId, SoupMenu, SoupRecipe } from '@soups/soups.types';
 
-export type SoupId =
-  | 'sopa-wantan'
-  | 'chilcano-de-pescado'
-  | 'menestron-de-carne'
-  | 'caldo-de-gallina';
-
-export type SoupName =
-  | 'Sopa Wantan'
-  | 'Chilcano de Pescado'
-  | 'Menestrón de Carne'
-  | 'Caldo de Gallina';
-
-export type SoupOverview = {
-  id: SoupId;
-  name: SoupName;
-};
-
-export type SoupRecipe = {
-  ingredients: string[];
-} & SoupOverview;
-
-export type FindSoup = (id: string) => Promise<SoupRecipe>;
-
-export type FindSoups = () => { soups: SoupOverview[] };
+export type FindSoup = (id: SoupId) => Promise<SoupRecipe>;
+export type FindMenu = () => SoupMenu;
 
 @Injectable()
 export class SoupsService {
-  findAll: FindSoups = () => {
-    const soups: SoupOverview[] = [
-      { id: 'sopa-wantan', name: 'Sopa Wantan' },
-      { id: 'chilcano-de-pescado', name: 'Chilcano de Pescado' },
-      { id: 'menestron-de-carne', name: 'Menestrón de Carne' },
-      { id: 'caldo-de-gallina', name: 'Caldo de Gallina' },
-    ];
-    return { soups };
+  findAll: FindMenu = () => {
+    return menu;
   };
 
   findById: FindSoup = async (id: SoupId) => {
-    const bazz = await import(`../recipes/sopa-wantan/recipe.json`);
-    console.log(bazz);
-    console.log(fata);
-
-    const recipe = await import(`./recipes/${id}`);
-    console.log('recipe');
-    console.log(recipe);
-    return recipe;
+    const recipe = `./recipes/${id}`;
+    return await import(recipe);
   };
 }

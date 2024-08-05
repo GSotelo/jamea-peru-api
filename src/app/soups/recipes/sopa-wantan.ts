@@ -1,11 +1,7 @@
-import type { SoupRecipe, SoupOverview } from '@src/app/soups/soups.service';
-
-export const overview: SoupOverview = {
-  id: 'sopa-wantan',
-  name: 'Sopa Wantan',
-};
+import type { SoupRecipe } from '@soups/soups.types';
 
 export const recipe: SoupRecipe = {
-  ...overview,
+  id: 'sopa-wantan',
+  name: 'Sopa Wantan',
   ingredients: ['pollo', 'verduras', 'fideos', 'huevo'],
 };
