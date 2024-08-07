@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { SoupsService } from './soups.service';
+import { SoupsService } from '@soups/soups.service';
 import type { SoupId } from '@soups/soups.types';
 
 @Controller('soups')

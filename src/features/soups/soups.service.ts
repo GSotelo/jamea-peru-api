@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { menu } from '@soups/recipes/menu';
+import { menu } from './recipes/menu';
 import type { SoupId, SoupMenu, SoupRecipe } from '@soups/soups.types';
 
 export type FindSoup = (id: SoupId) => Promise<SoupRecipe>;

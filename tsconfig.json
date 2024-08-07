@@ -18,15 +18,15 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@appetizers/*": ["src/app/appetizers/*"],
-      "@desserts/*": ["src/app/desserts/*"],
-      "@drinks/*": ["src/app/drinks/*"],
+      "@src/*": ["src/*"],
+      "@shared/*": ["src/shared/*"],
       "@lib/*": ["src/lib/*"],
-      "@mainCourses/*": ["src/app/main-courses/*"],
-      "@sideDishes/*": ["src/app/side-dishes/*"],
-      "@soups/*": ["src/app/soups/*"],
-      "@src/*": ["src/*"]
+      "@appetizers/*": ["src/features/appetizers/*"],
+      "@desserts/*": ["src/features/desserts/*"],
+      "@drinks/*": ["src/features/drinks/*"],
+      "@mainCourses/*": ["src/features/main-courses/*"],
+      "@sideDishes/*": ["src/features/side-dishes/*"],
+      "@soups/*": ["src/features/soups/*"]
     }
   }
 }
