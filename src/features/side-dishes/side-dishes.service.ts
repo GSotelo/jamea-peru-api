@@ -9,9 +9,9 @@ import type { FindMenu, FindRecipe } from '@shared/types/shared.types';
 
 @Injectable()
 export class SideDishesService {
-  findMenu(): FindMenu<SideDishMenu> {
+  findMenu: FindMenu<SideDishMenu> = () => {
     return menu;
-  }
+  };
 
   findRecipe: FindRecipe<SideDishId, SideDishRecipe> = async (id) => {
     const recipe = `./recipes/${id}`;
