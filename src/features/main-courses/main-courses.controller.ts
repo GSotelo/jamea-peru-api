@@ -2,7 +2,10 @@ import { Controller, Get, Param } from '@nestjs/common';
 import { MainCoursesService } from './main-courses.service';
 import type { MainCourseId } from '@mainCourses/main-courses.types';
 
-@Controller('main-courses')
+@Controller({
+  path: 'main-courses',
+  version: '1',
+})
 export class MainCoursesController {
   constructor(private readonly mainCoursesService: MainCoursesService) {}
 

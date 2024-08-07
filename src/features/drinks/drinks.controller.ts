@@ -2,7 +2,10 @@ import { Controller, Get, Param } from '@nestjs/common';
 import { DrinksService } from './drinks.service';
 import type { DrinkId } from './drinks.types';
 
-@Controller('drinks')
+@Controller({
+  path: 'drinks',
+  version: '1',
+})
 export class DrinksController {
   constructor(private readonly drinksService: DrinksService) {}
   @Get()
