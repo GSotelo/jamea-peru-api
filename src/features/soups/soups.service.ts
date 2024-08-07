@@ -1,17 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { menu } from './recipes/menu';
 import type { SoupId, SoupMenu, SoupRecipe } from './soups.types';
-
-export type FindMenu = () => SoupMenu;
-export type FindRecipe = (id: SoupId) => Promise<SoupRecipe>;
+import type { FindMenu, FindRecipe } from '@shared/types/shared.types';
 
 @Injectable()
 export class SoupsService {
-  findMenu: FindMenu = () => {
+  findMenu: FindMenu<SoupMenu> = () => {
     return menu;
   };
 
-  findRecipe: FindRecipe = async (id: SoupId) => {
+  findRecipe: FindRecipe<SoupId, SoupRecipe> = async (id) => {
     const recipe = `./recipes/${id}`;
     return await import(recipe);
   };

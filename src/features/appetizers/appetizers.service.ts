@@ -5,17 +5,15 @@ import type {
   AppetizerMenu,
   AppetizerRecipe,
 } from '@appetizers/appetizers.types';
-
-export type FindMenu = () => AppetizerMenu;
-export type FindRecipe = (id: AppetizerId) => Promise<AppetizerRecipe>;
+import type { FindMenu, FindRecipe } from '@shared/types/shared.types';
 
 @Injectable()
 export class AppetizersService {
-  findMenu: FindMenu = () => {
+  findMenu: FindMenu<AppetizerMenu> = () => {
     return menu;
   };
 
-  findRecipe: FindRecipe = async (id: AppetizerId) => {
+  findRecipe: FindRecipe<AppetizerId, AppetizerRecipe> = async (id) => {
     const recipe = `./recipes/${id}`;
     return await import(recipe);
   };

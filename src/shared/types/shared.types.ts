@@ -10,3 +10,7 @@ export type Menu<T extends { type: string }, K> = {
 export type Recipe<Item> = {
   ingredients: string[];
 } & Item;
+
+export type FindMenu<Menu> = () => Menu;
+
+export type FindRecipe<Id, Recipe> = (id: Id) => Promise<Recipe>;
