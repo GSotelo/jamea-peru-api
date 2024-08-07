@@ -1,12 +1,18 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { MainCoursesService } from './main-courses.service';
+import type { MainCourseId } from '@mainCourses/main-courses.types';
 
 @Controller('main-courses')
 export class MainCoursesController {
   constructor(private readonly mainCoursesService: MainCoursesService) {}
 
   @Get()
-  getMainCourses() {
-    return this.mainCoursesService.findAll();
+  findMenu() {
+    return this.mainCoursesService.findMenu();
+  }
+
+  @Get(':id')
+  findRecipe(@Param('id') id: MainCourseId) {
+    return this.mainCoursesService.findRecipe(id);
   }
 }

@@ -1,12 +1,22 @@
 import { Injectable } from '@nestjs/common';
+import { menu } from './recipes/menu';
+import type {
+  SideDishId,
+  SideDishMenu,
+  SideDishRecipe,
+} from './side-dishes.types';
 
-type FindSideDishes = { sideDishes: string[] };
+export type FindMenu = SideDishMenu;
+export type FindRecipe = (id: SideDishId) => Promise<SideDishRecipe>;
 
 @Injectable()
 export class SideDishesService {
-  findAll(): FindSideDishes {
-    return {
-      sideDishes: ['Chifles Piuranos', 'Salsa Criolla', 'Cancha Serrana'],
-    };
+  findMenu(): FindMenu {
+    return menu;
   }
+
+  findRecipe: FindRecipe = async (id: SideDishId) => {
+    const recipe = `./recipes/${id}`;
+    return await import(recipe);
+  };
 }

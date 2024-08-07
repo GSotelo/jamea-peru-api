@@ -1,22 +1,18 @@
 import { Injectable } from '@nestjs/common';
+import { menu } from './recipes/menu';
+import type { DessertId, DessertsMenu, DessertRecipe } from './desserts.types';
 
-type FindDesserts = { desserts: string[] };
+type FindMenu = () => DessertsMenu;
+type FindRecipe = (id: DessertId) => Promise<DessertRecipe>;
 
 @Injectable()
 export class DessertsService {
-  findAll(): FindDesserts {
-    return {
-      desserts: [
-        'Chocotejas',
-        'Budín de Pan',
-        'Alfajores',
-        'Turrón de Doña Pepa',
-        'Picarones',
-        'Arroz Zambito',
-        'Mazamorra Morada',
-        'Arroz con Leche',
-        'Suspiro a la Limeña',
-      ],
-    };
-  }
+  findMenu: FindMenu = () => {
+    return menu;
+  };
+
+  findRecipe: FindRecipe = async (id: DessertId) => {
+    const recipe = `./recipes/${id}`;
+    return await import(recipe);
+  };
 }

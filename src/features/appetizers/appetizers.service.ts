@@ -1,25 +1,22 @@
 import { Injectable } from '@nestjs/common';
+import { menu } from './recipes/menu';
+import type {
+  AppetizerId,
+  AppetizerMenu,
+  AppetizerRecipe,
+} from '@appetizers/appetizers.types';
 
-type FindAppetizers = { appetizers: string[] };
+export type FindMenu = () => AppetizerMenu;
+export type FindRecipe = (id: AppetizerId) => Promise<AppetizerRecipe>;
 
 @Injectable()
 export class AppetizersService {
-  findAll(): FindAppetizers {
-    return {
-      appetizers: [
-        'Ensalada de Palta',
-        'Empanadas Peruanas',
-        'Palta Rellena',
-        'Papa Rellena de Pollo',
-        'Ceviche',
-        'Empanadas',
-        'Wantan Frito',
-        'Crema de Rocoto',
-        'Ensalada Rusa',
-        'Ocopa Arequipeña',
-        'Papa Rellena',
-        'Papa a la Huancaína',
-      ],
-    };
-  }
+  findMenu: FindMenu = () => {
+    return menu;
+  };
+
+  findRecipe: FindRecipe = async (id: AppetizerId) => {
+    const recipe = `./recipes/${id}`;
+    return await import(recipe);
+  };
 }

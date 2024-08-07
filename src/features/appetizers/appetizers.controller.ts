@@ -1,16 +1,18 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppetizersService } from './appetizers.service';
-
-type Appetizers = {
-  appetizers: string[];
-};
+import type { AppetizerId } from './appetizers.types';
 
 @Controller('appetizers')
 export class AppetizersController {
   constructor(private readonly appetizersService: AppetizersService) {}
 
   @Get()
-  getAppetizers(): Appetizers {
-    return this.appetizersService.findAll();
+  findMenu() {
+    return this.appetizersService.findMenu();
+  }
+
+  @Get(':id')
+  findRecipe(@Param('id') id: AppetizerId) {
+    return this.appetizersService.findRecipe(id);
   }
 }

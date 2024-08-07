@@ -22,7 +22,8 @@ export type MainCourseId =
   | 'tallarines-verdes-con-bisteck'
   | 'arroz-con-pollo'
   | 'aji-de-gallina'
-  | 'arroz-chaufa-de-pollo';
+  | 'arroz-chaufa-de-pollo'
+  | 'lomo-saltado';
 
 export type MainCourseName =
   | 'Arroz a la Cubana'
@@ -46,7 +47,8 @@ export type MainCourseName =
   | 'Tallarines Verdes con Bisteck'
   | 'Arroz con Pollo'
   | 'Aji de Gallina'
-  | 'Arroz Chaufa de Pollo';
+  | 'Arroz Chaufa de Pollo'
+  | 'Lomo Saltado';
 
 export type MainCourseItem = MenuItem<MainCourseId, MainCourseName>;
 

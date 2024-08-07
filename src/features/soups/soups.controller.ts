@@ -1,18 +1,18 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { SoupsService } from '@soups/soups.service';
-import type { SoupId } from '@soups/soups.types';
+import { SoupsService } from './soups.service';
+import type { SoupId } from './soups.types';
 
 @Controller('soups')
 export class SoupsController {
   constructor(private readonly soupsService: SoupsService) {}
 
   @Get()
-  getSoups() {
-    return this.soupsService.findAll();
+  findMenu() {
+    return this.soupsService.findMenu();
   }
 
   @Get(':id')
-  getSoupById(@Param('id') id: SoupId) {
-    return this.soupsService.findById(id);
+  findRecipe(@Param('id') id: SoupId) {
+    return this.soupsService.findRecipe(id);
   }
 }
