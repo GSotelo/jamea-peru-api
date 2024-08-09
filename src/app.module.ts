@@ -1,4 +1,6 @@
 import { Module } from '@nestjs/common';
+import { APP_GUARD } from '@nestjs/core';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { AppetizersModule } from '@appetizers/appetizers.module';
 import { DessertsModule } from '@desserts/desserts.module';
 import { DrinksModule } from '@drinks/drinks.module';
@@ -16,8 +18,20 @@ import { AppService } from './app.service';
     MainCoursesModule,
     SideDishesModule,
     SoupsModule,
+    ThrottlerModule.forRoot([
+      {
+        ttl: 30000,
+        limit: 100,
+      },
+    ]),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
+  ],
 })
 export class AppModule {}
