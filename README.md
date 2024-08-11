@@ -2,14 +2,14 @@
 
 The API explores the many exciting tastes of Peruvian food. The project is under active development.
 
-## Table of Contents
+## Table of contents
 - [System Requirements](#system-requirements)
 - [Run project](#run-project)
   - [Local Environment](#local-environment)
   - [Using Docker container](#using-docker-container)
-- [API Reference](#run-project-locally)
+- [API Reference](#api-reference)
 
-## System Requirements
+## System requirements
 * [Node.js](https://nodejs.org/) v20.15.1
 * [@nest/cli](https://www.npmjs.com/package/@nestjs/cli) v10.4.2
 
@@ -17,7 +17,7 @@ The API explores the many exciting tastes of Peruvian food. The project is under
 
 You can run this project either locally on your machine or within a Docker container. Choose the method that best suits your environment.
 
-## Local Environment
+## Local environment
 
 To run this project locally, verify that your system meets the specified requirements. Upon confirmation, begin the installation of required dependencies:
 
@@ -35,11 +35,12 @@ npm run dev
 
 Work in progress...
 
-# API Reference
+## API reference
 
-Work in progress...
+This API reference categorizes resources by type. Below is a list of available resources.
+### Appetizers
 
-
-
-
-
+| Method | HTTP request           | Description                                        |
+|--------|------------------------|----------------------------------------------------|
+| get    | GET /v1/appetizers     | Retrieve appetizers menu                           |
+| get    | GET /v1/appetizers/:id | Retrieve appetizer recipe by its unique identifier |
