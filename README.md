@@ -44,3 +44,39 @@ This API reference categorizes resources by type. Below is a list of available r
 |--------|------------------------|----------------------------------------------------|
 | get    | GET /v1/appetizers     | Retrieve appetizers menu                           |
 | get    | GET /v1/appetizers/:id | Retrieve appetizer recipe by its unique identifier |
+
+### Desserts
+
+| Method | HTTP request         | Description                                      |
+|--------|----------------------|--------------------------------------------------|
+| get    | GET /v1/desserts     | Retrieve desserts menu                           |
+| get    | GET /v1/desserts/:id | Retrieve dessert recipe by its unique identifier |
+
+### Drinks
+
+| Method | HTTP request       | Description                                    |
+|--------|--------------------|------------------------------------------------|
+| get    | GET /v1/drinks     | Retrieve drinks menu                           |
+| get    | GET /v1/drinks/:id | Retrieve drink recipe by its unique identifier |
+
+### Main Courses
+
+| Method | HTTP request             | Description                                          |
+|--------|--------------------------|------------------------------------------------------|
+| get    | GET /v1/main-courses     | Retrieve main courses menu                           |
+| get    | GET /v1/main-courses/:id | Retrieve main course recipe by its unique identifier |
+
+### Side Dishes
+
+| Method | HTTP request            | Description                                        |
+|--------|-------------------------|----------------------------------------------------|
+| get    | GET /v1/side-dishes     | Retrieve side dishes menu                          |
+| get    | GET /v1/side-dishes/:id | Retrieve side dish recipe by its unique identifier |
+
+
+### Soups
+
+| Method | HTTP request         | Description                                   |
+|--------|----------------------|-----------------------------------------------|
+| get    | GET /v1/soups        | Retrieve soups menu                           |
+| get    | GET /v1/soups/:id    | Retrieve soup recipe by its unique identifier |
