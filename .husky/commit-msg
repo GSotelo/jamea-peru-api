@@ -1,0 +1,2 @@
+commit_msg_file=$1
+node .husky/commit-msg.js $commit_msg_file
