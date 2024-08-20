@@ -41,13 +41,39 @@ This API reference categorizes resources by type. Below is a list of available r
 
 ### Appetizers
 
-###### List all main courses
+##### List all appetizers
 
-This endpoint provides a list of all main courses.
+This endpoint provides a list of all appetizers.
 
 ###### Request
 ```http request
 GET /v1/appetizers
+```
+
+###### Response
+```json lines
+{
+    "appetizers": [
+        {
+            "id": "ensalada-de-palta",
+            "name": "Ensalada de Palta"
+        },
+        {
+            "id": "empanadas-peruanas",
+            "name": "Empanadas Peruanas"
+        },
+        ...
+    ]
+}
+```
+
+###### Retrieve appetizer by ID
+
+To retrieve a particular appetizer, use its ID, which is available when you get the full list of appetizers.
+
+###### Request
+```http request
+GET /v1/appetizers/:id
 ```
 
 ###### Response
