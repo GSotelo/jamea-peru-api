@@ -151,10 +151,51 @@ GET /v1/desserts/:id
 
 ### Drinks
 
-| Method | HTTP request       | Description                                    |
-|--------|--------------------|------------------------------------------------|
-| get    | GET /v1/drinks     | Retrieve drinks menu                           |
-| get    | GET /v1/drinks/:id | Retrieve drink recipe by its unique identifier |
+##### List all drinks
+
+This endpoint shows all available drinks.
+
+###### Request
+```http request
+GET /v1/drinks
+```
+
+###### Response
+```json lines
+{
+  "drinks": [
+    {
+      "id": "limonada-frozen",
+      "name": "Limonada Frozen"
+    },
+    ...
+  ]
+}
+```
+
+##### Retrieve drink by ID
+
+To access a specific drink, use its ID, which you can find when retrieving the complete list of drinks.
+
+###### Request
+```http request
+GET /v1/drink/:id
+```
+
+###### Response
+```json lines
+{
+  "recipe": {
+    "id": "limonada-frozen",
+    "name": "Limonada Frozen",
+    "ingredients": [
+      "limón",
+      "azúcar",
+      "hielo"
+    ]
+  }
+}
+```
 
 ### Main Courses
 
