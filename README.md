@@ -67,7 +67,7 @@ GET /v1/appetizers
 }
 ```
 
-###### Retrieve appetizer by ID
+##### Retrieve appetizer by ID
 
 To retrieve a particular appetizer, use its ID, which is available when you get the full list of appetizers.
 
@@ -79,17 +79,16 @@ GET /v1/appetizers/:id
 ###### Response
 ```json lines
 {
-    "appetizers": [
-        {
-            "id": "ensalada-de-palta",
-            "name": "Ensalada de Palta"
-        },
-        {
-            "id": "empanadas-peruanas",
-            "name": "Empanadas Peruanas"
-        },
-        ...
+  "recipe": {
+    "id": "palta-rellena",
+    "name": "Palta Rellena",
+    "ingredients": [
+      "palta",
+      "atún",
+      "mayonesa",
+      "limón"
     ]
+  }
 }
 ```
 
