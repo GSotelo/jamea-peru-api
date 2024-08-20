@@ -38,12 +38,40 @@ Work in progress...
 ## API reference
 
 This API reference categorizes resources by type. Below is a list of available resources.
+
 ### Appetizers
+
+#### List all main courses
+
+This endpoint provides a list of all main courses.
+
+```http request
+GET /v1/appetizers
+```
+
+Response
+```
+{
+    "appetizers": [
+        {
+            "id": "ensalada-de-palta",
+            "name": "Ensalada de Palta"
+        },
+        {
+            "id": "empanadas-peruanas",
+            "name": "Empanadas Peruanas"
+        },
+        ...
+    ]
+}
+```
 
 | Method | HTTP request           | Description                                        |
 |--------|------------------------|----------------------------------------------------|
 | get    | GET /v1/appetizers     | Retrieve appetizers menu                           |
 | get    | GET /v1/appetizers/:id | Retrieve appetizer recipe by its unique identifier |
+
+
 
 ### Desserts
 
