@@ -53,17 +53,17 @@ GET /v1/appetizers
 ###### Response
 ```json lines
 {
-    "appetizers": [
-        {
-            "id": "ensalada-de-palta",
-            "name": "Ensalada de Palta"
-        },
-        {
-            "id": "empanadas-peruanas",
-            "name": "Empanadas Peruanas"
-        },
-        ...
-    ]
+  "appetizers": [
+    {
+      "id": "ensalada-de-palta",
+      "name": "Ensalada de Palta"
+    },
+    {
+      "id": "empanadas-peruanas",
+      "name": "Empanadas Peruanas"
+    },
+    ...
+  ]
 }
 ```
 
@@ -94,10 +94,56 @@ GET /v1/appetizers/:id
 
 ### Desserts
 
-| Method | HTTP request         | Description                                      |
-|--------|----------------------|--------------------------------------------------|
-| get    | GET /v1/desserts     | Retrieve desserts menu                           |
-| get    | GET /v1/desserts/:id | Retrieve dessert recipe by its unique identifier |
+##### List all desserts
+
+This endpoint provides a list of all desserts.
+
+###### Request
+```http request
+GET /v1/desserts
+```
+
+###### Response
+```json lines
+{
+  "desserts": [
+    {
+      "id": "chocotejas",
+      "name": "Chocotejas"
+    },
+    {
+      "id": "budin-de-pan",
+      "name": "Budín de Pan"
+    },
+    ...
+  ]
+}
+```
+
+##### Retrieve dessert by ID
+
+To retrieve a particular dessert, use its ID, which is available when you get the full list of desserts.
+
+###### Request
+```http request
+GET /v1/desserts/:id
+```
+
+###### Response
+```json lines
+{
+  "recipe": {
+    "id": "alfajores",
+    "name": "Alfajores",
+    "ingredients": [
+      "harina",
+      "azúcar",
+      "manteca",
+      "dulce de leche"
+    ]
+  }
+}
+```
 
 ### Drinks
 
