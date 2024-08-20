@@ -96,7 +96,7 @@ GET /v1/appetizers/:id
 
 ##### List all desserts
 
-This endpoint provides a list of all desserts.
+This endpoint gives you access to a list of all desserts.
 
 ###### Request
 ```http request
@@ -115,6 +115,10 @@ GET /v1/desserts
       "id": "budin-de-pan",
       "name": "Budín de Pan"
     },
+    {
+      "id": "alfajores",
+      "name": "Alfajores"
+    },
     ...
   ]
 }
@@ -122,7 +126,7 @@ GET /v1/desserts
 
 ##### Retrieve dessert by ID
 
-To retrieve a particular dessert, use its ID, which is available when you get the full list of desserts.
+This endpoint lets you get a dessert using its ID, which you can find in the list of all desserts.
 
 ###### Request
 ```http request
