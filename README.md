@@ -201,7 +201,7 @@ GET /v1/drinks/:id
 
 ##### List all main courses
 
-This API endpoint shows a list of all the main courses available.
+This endpoint shows a list of all the main courses available.
 
 ###### Request
 ```http request
@@ -255,7 +255,7 @@ GET /v1/main-courses/:id
 
 ##### List all side dishes
 
-This link shows all the available side dishes.
+This is where you can find our entire selection of side dishes.
 
 ###### Request
 ```http request
