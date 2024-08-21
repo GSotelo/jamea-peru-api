@@ -199,10 +199,57 @@ GET /v1/drink/:id
 
 ### Main Courses
 
-| Method | HTTP request             | Description                                          |
-|--------|--------------------------|------------------------------------------------------|
-| get    | GET /v1/main-courses     | Retrieve main courses menu                           |
-| get    | GET /v1/main-courses/:id | Retrieve main course recipe by its unique identifier |
+##### List all main courses
+
+This API endpoint shows a list of all the main dishes available.
+
+###### Request
+```http request
+GET /v1/main-courses
+```
+
+###### Response
+```json lines
+{
+  "mainCourses": [
+    {
+      "id": "arroz-a-la-cubana",
+      "name": "Arroz a la Cubana"
+    },
+    {
+      "id": "pollo-con-champinones",
+      "name": "Pollo con Champiñones"
+    },
+    ...
+  ]
+}
+```
+
+##### Retrieve Main Course by ID
+
+To find a specific main course, use its unique number, which you can see when you look at the complete list of main courses.
+
+###### Request
+```http request
+GET /v1/main-courses/:id
+```
+
+###### Response
+```json lines
+{
+  "recipe": {
+    "id": "lomo-saltado",
+    "name": "Lomo Saltado",
+    "ingredients": [
+      "carne de res",
+      "cebolla",
+      "tomate",
+      "papas fritas",
+      "arroz"
+    ]
+  }
+}
+```
 
 ### Side Dishes
 
