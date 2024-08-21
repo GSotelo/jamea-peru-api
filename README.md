@@ -179,7 +179,7 @@ To access a specific drink, use its ID, which you can find when retrieving the c
 
 ###### Request
 ```http request
-GET /v1/drink/:id
+GET /v1/drinks/:id
 ```
 
 ###### Response
@@ -201,7 +201,7 @@ GET /v1/drink/:id
 
 ##### List all main courses
 
-This API endpoint shows a list of all the main dishes available.
+This API endpoint shows a list of all the main courses available.
 
 ###### Request
 ```http request
@@ -225,7 +225,7 @@ GET /v1/main-courses
 }
 ```
 
-##### Retrieve Main Course by ID
+##### Retrieve main course by ID
 
 To find a specific main course, use its unique number, which you can see when you look at the complete list of main courses.
 
