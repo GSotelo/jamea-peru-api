@@ -253,15 +253,114 @@ GET /v1/main-courses/:id
 
 ### Side Dishes
 
-| Method | HTTP request            | Description                                        |
-|--------|-------------------------|----------------------------------------------------|
-| get    | GET /v1/side-dishes     | Retrieve side dishes menu                          |
-| get    | GET /v1/side-dishes/:id | Retrieve side dish recipe by its unique identifier |
+##### List all side dishes
 
+This link shows all the available side dishes.
 
+###### Request
+```http request
+GET /v1/side-dishes
+```
+
+###### Response
+```json lines
+{
+  "sideDishes": [
+    {
+      "id": "chifles-piuranos",
+      "name": "Chifles Piuranos"
+    },
+    {
+      "id": "salsa-criolla",
+      "name": "Salsa Criolla"
+    },
+    {
+      "id": "cancha-serrana",
+      "name": "Cancha Serrana"
+    }
+  ]
+}
+```
+
+##### Retrieve side dish by ID
+
+To get a specific side dish, use its unique number, which you can find when you see the complete list of side dishes.
+
+###### Request
+```http request
+GET /v1/side-dishes/:id
+```
+
+###### Response
+```json lines
+{
+  "recipe": {
+    "id": "chifles-piuranos",
+    "name": "Chifles Piuranos",
+    "ingredients": [
+      "Platano",
+      "Aceite",
+      "Sal"
+    ]
+  }
+}
+```
 ### Soups
 
-| Method | HTTP request         | Description                                   |
-|--------|----------------------|-----------------------------------------------|
-| get    | GET /v1/soups        | Retrieve soups menu                           |
-| get    | GET /v1/soups/:id    | Retrieve soup recipe by its unique identifier |
+##### List all soups
+
+This endpoint provides a list of all soups.
+
+###### Request
+```http request
+GET /v1/soups
+```
+
+###### Response
+```json lines
+{
+  "soups": [
+    {
+      "id": "sopa-wantan",
+      "name": "Sopa Wantan"
+    },
+    {
+      "id": "chilcano-de-pescado",
+      "name": "Chilcano de Pescado"
+    },
+    {
+      "id": "menestron-de-carne",
+      "name": "Menestrón de Carne"
+    },
+    {
+      "id": "caldo-de-gallina",
+      "name": "Caldo de Gallina"
+    }
+  ]
+}
+```
+
+##### Retrieve soup by ID
+
+To retrieve a particular soup, use its ID, which is available when you get the full list of soups.
+
+###### Request
+```http request
+GET /v1/soups/:id
+```
+
+###### Response
+```json lines
+{
+  "recipe": {
+    "id": "sopa-wantan",
+    "name": "Sopa Wantan",
+    "ingredients": [
+      "pollo",
+      "verduras",
+      "fideos",
+      "huevo"
+    ]
+  }
+}
+```
