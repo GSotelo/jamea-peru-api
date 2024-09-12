@@ -5,7 +5,7 @@ const globals = require('globals');
 
 module.exports = tseslint.config(
   {
-    ignores: ['**/build/**', '**/dist/**'],
+    ignores: ['**/build/', '**/dist/', '**/build/', '**/dist/', '**/tmp/'],
   },
   {
     files: ['**/*.ts'],
